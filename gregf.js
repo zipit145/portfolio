@@ -74,7 +74,7 @@ $( ".calculatemw" ).click(function() {
     1,
   ] 
   switch (!!variables && !!units) {
-    case variables[0] !=="" && variables[2] !=="" && variables[3] !=="" && units[2] !=="":
+    case variables[0] !=="" && variables[2] !=="" && variables[3] !=="" && units[2] !=="" && units[0] !=="":
       var unit = units[2] * units[0];
       var calc = variables[2] * variables[0] * variables[3];
       //check for unit change on answer
@@ -89,18 +89,38 @@ $( ".calculatemw" ).click(function() {
         $(".mass").val(result);
       }
       break;
-    case variables[1] !=="" && variables[2] !=="" && variables[3] !=="":
-    alert("volume");
+    case variables[1] !=="" && variables[2] !=="" && variables[3] !=="" && units[2] !=="" && units[1] !=="":
+      var unit = units[1] / units[2];
       var calc = variables[1] / (variables[2] * variables[3]);
-      $(".volume").val(result);
+      //check for unit change on answer
+      var result = unit*calc;
+      if ( result > 10 || result < 0.1){
+        var exponent = result.toExponential().match(/e.*/);
+        $(".volumeunits").val(exponent[0].substring(1));
+        var result = calc;
+        $(".volume").val(result);
+      } else {
+        $(".volumeunits").val("0");
+        $(".volume").val(result);
+      }
       break;
-    case variables[0] !=="" && variables[1] !=="" && variables[3] !=="":
-    alert("conc");
+    case variables[0] !=="" && variables[1] !=="" && variables[3] !=="" && units[0] !=="" && units[1] !=="":
+      var unit = units[1] / units[0];
       var calc = variables[1] / (variables[0] * variables[3]);
-      $(".concentration").val(result);
+      //check for unit change on answer
+      var result = unit*calc;
+      if ( result > 10 || result < 0.1){
+        var exponent = result.toExponential().match(/e.*/);
+        $(".concentrationunits").val(exponent[0].substring(1));
+        var result = calc;
+        $(".concentration").val(result);
+      } else {
+        $(".concentrationunits").val("0");
+        $(".concentration").val(result);
+      }
       break;
     default:
-      alert("default");
+      alert("Please be sure you have a MW and 2/3 mass, volume, concentration values and units entered and try again.");
   }
 });
 
