@@ -1,4 +1,10 @@
 var span = document.getElementsByClassName("close")[0];
+
+
+//navigation
+$(function(){
+  $("#nav-placeholder").load("navg4.html");
+});
 //Click to expand and close calc modals
 $(".jsEx").click(function() {
   $(".modal").removeClass('inactive');

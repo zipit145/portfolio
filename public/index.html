@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Greg Professional</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="gregf.css" type="text/css">
 </head>
 <body>
+    <header>
+        <div id="nav-placeholder"></div>
+    </header>
     <main class="container">
         <h2>Professional Summary</h2>
         <p class="summary">
@@ -26,12 +29,16 @@
         <h3 class="calcTitle">I am recreating some of the javascript calculators that I worked on during my old job. Please click below for some examples.</h3>
         <!-- Button trigger modal -->
         <div class="row">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dilutionModal">
-                Launch Dilution Calculator
-            </button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#molarityModal">
-                Launch molarity Calculator
-            </button>
+            <div class="col-md-3 col-sm-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dilutionModal">
+                    Launch Dilution Calculator
+                </button>
+            </div>
+            <div class="col-md-3 col-sm-1 offset-md-3 offset-sm-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#molarityModal">
+                    Launch molarity Calculator
+                </button>
+            </div>
         </div>
           <!-- Modal -->
         <div class="modal fade" id="dilutionModal" tabindex="-1" role="dialog" aria-labelledby="dilutionModalLabel" aria-hidden="true">
@@ -126,8 +133,23 @@
             </div>
         </div>
     </main>
+    <footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAmLCsPwOl0P9F0hs1LfH1s9m4Zi-g2HCU",
+            authDomain: "portfolio-700d1.firebaseapp.com",
+            databaseURL: "https://portfolio-700d1.firebaseio.com",
+            projectId: "portfolio-700d1",
+            storageBucket: "portfolio-700d1.appspot.com",
+            messagingSenderId: "88803492958"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="./gregf.js"></script>
