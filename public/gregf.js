@@ -1,6 +1,5 @@
 var span = document.getElementsByClassName("close")[0];
 
-
 //navigation
 $(function(){
   $("#nav-placeholder").load("navg4.html");
