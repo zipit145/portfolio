@@ -1,23 +1,28 @@
 var span = document.getElementsByClassName("close")[0];
+//Click to expand and close calc modals
 $(".jsEx").click(function() {
   $(".modal").removeClass('inactive');
 });
 $(".jsEx2").click(function() {
   $(".modal2").removeClass('inactive');
 });
-$( ".close" ).click(function() {
-  $(".modal").addClass('inactive');
-});
-$( ".close" ).click(function() {
-  $(".modal2").addClass('inactive');
-});
+// $( ".close" ).click(function() {
+//   $(".modal").addClass('inactive');
+// });
+// $( ".close" ).click(function() {
+//   $(".modal2").addClass('inactive');
+// });
+
+//c1v1=c2v2 calculator
 $(".calculate").click(function() {
+  //Get values from calc boxes
   var c1v1c2v2 = [
     $(".c1").val(),
     $(".v1").val(),
     $(".c2").val(),
     $(".v2").val()
   ]
+  //Which box is blank and what is the formula for that box
   switch (!!c1v1c2v2) {
     case c1v1c2v2[0] !=="" && c1v1c2v2[1] !=="" && c1v1c2v2[2] !=="":
       var result = $(".c1").val() * $(".v1").val() / $(".c2").val();
@@ -38,19 +43,6 @@ $(".calculate").click(function() {
     default:
       alert("default");
   }
-  // if ($(".c1").val() !=="" && $(".c2").val() !=="" && $(".v1").val() !=="") {
-  //   var result = $(".c1").val() * $(".v1").val() / $(".c2").val();
-  //   $(".v2").val(result);
-  // } else if ($(".c1").val() !=="" && $(".v2").val() !=="" && $(".v1").val() !=="") {
-  //   var result = $(".c1").val() * $(".v1").val() / $(".v2").val();
-  //   $(".c2").val(result);
-  // } else if ($(".v1").val() !=="" && $(".c2").val() !=="" && $(".v2").val() !=="") {
-  //   var result = $(".v2").val() * $(".c2").val() / $(".v1").val();
-  //   $(".c1").val(result);
-  // } else if ($(".c1").val() !=="" && $(".v2").val() !=="" && $(".c2").val() !=="") {
-  //   var result = $(".c2").val() * $(".v2").val() / $(".c1").val();
-  //   $(".v1").val(result);
-  // }
 });
 
 //Molarity calculator
@@ -126,11 +118,30 @@ $( ".calculatemw" ).click(function() {
   } else if (factor % 3 !==0) {
     var unitmod = true;
   }
+
+  //this needs a refactor
+  //If the units are not divisible by 3 (since the unit drop down values are multiples of 3)
+  //This while loop determines how many times the unit factor is divisible by 3 then saves that number as a count
+  // the remainder is stored as the factor to be used later.
+  //Example: a factor of -6 is cleanly divisible by 3 and would result in 2 (count) unit changes down on the final answer
+  //and a remainder factor of 0
+  //Solving for mass = C V MW in the  the above example with units as numbers would be 2 (0.001) * 2 (0.001) * 2 (1)
+  //That example is solving for the answer in grams, and would be 0.000008 (8e-6) grams however if you move the decimal point 6 places,
+  //which is equivalent to representing 0.000008 grams as 8 micro grams. Another way for the calculator to say this is the answer is 8, count is -2, and factor is 0
+  //An example that doesnt involve a clean unit conversion is: 2 (0.001) * 20 (0.001) * 2 (1)
+  //If the above is solved for grams it would be one decimal point larger than the previous example at 0.00008 (8e-5)
+  //In this case the correct answer would be to convert this to be either 80 micrograms or 0.08 milligrams.
+  //consider the unit factor at this point of -5, which can be thought of -5/3 units on the drop down.
+  //In this while -5 is divided by 3 one time leaving a remainder of -2.
+  //the calcluator will flatten the calculated value out from 80->8 (ignoring units 2*2*20=80), count = -1, and factor -2
+  //The answer will be 8.0 with the decimal point moved twice to the left (smaller number since factor is negative), which is 
+  //0.08 and the units will be set to the negative value 1 or mg. 80 micrograms is the same as 0.08 milligrams, which is the same 0.00008 grams.
+
   i = 0;
   if (operator) {
     while (unitmod === true) {
       var factor = Number(factor)+3;
-        i++;
+        i--;
       if ((factor+3) > -1) {
          var unitmod = false;
       }
@@ -148,83 +159,18 @@ $( ".calculatemw" ).click(function() {
       // result = result/(count*1000); 
     }
   }
+  //this calculator is designed to calculate a 1 digit number at the end. This involves converting a number like 80
+  //to be 8e+1, a regular expression truncates that string to get the number before e, which is added to a str where the
+  //it is set to 0 for e. This ensures 80, 0.8, or 800 all enter the final calculation as the number 8
+  //the difference between them is tracked through the factor and count variables.
+  //Factor variable is used to alter the final calclation, it represents the number of decimal points the final answer
+  // will be moved.
+  //Count variable on the other hand is an indication of how the final units need to be modified, each count represents a change of a factor of 1000
+
   var calc = calc.toExponential();
   var calc = calc.match(/[^e]*/);
   var calc = Number(calc+"e+0");
-  alert (count);
   var mwanswer = Math.pow(10,factor) * calc;
   $("."+location).val(mwanswer);
   $("."+location+"units").val(Number(count)*3);
 });
-
-//old basic division
-// $(".calculate").click(function() {
-//   var result = $(".numerator").val() / $(".denominator").val();
-//   $(".answer").html("The answer is: ".concat(result));
-// });
-
-//old calculator work
-// $( ".calculatemw" ).click(function() {
-//   var variables = [
-//     $(".volume").val(),
-//     $(".mass").val(),
-//     $(".concentration").val(),
-//     $(".mw").val(),
-//   ]
-//   var units = [
-//     Math.pow(10,$(".volumeunits").val()),
-//     Math.pow(10,$(".massunits").val()),
-//     Math.pow(10,$(".concentrationunits").val()),
-//     1,
-//   ] 
-//   switch (!!variables && !!units) {
-//     case variables[0] !=="" && variables[2] !=="" && variables[3] !=="" && units[2] !=="" && units[0] !=="":
-//       var unit = units[2] * units[0];
-//       var calc = variables[2] * variables[0] * variables[3];
-//       //check for unit change on answer
-//       var result = unit*calc;
-//       if ( result > 10 || result < 0.1){
-//         var exponent = result.toExponential().match(/e.*/);
-        
-//         $(".massunits").val(exponent[0].substring(1));
-//         var result = calc;
-//         $(".mass").val(result);
-//       } else {
-//         $(".massunits").val("0");
-//         $(".mass").val(result);
-//       }
-//       break;
-//     case variables[1] !=="" && variables[2] !=="" && variables[3] !=="" && units[2] !=="" && units[1] !=="":
-//       var unit = units[1] / units[2];
-//       var calc = variables[1] / (variables[2] * variables[3]);
-//       //check for unit change on answer
-//       var result = unit*calc;
-//       if ( result > 10 || result < 0.1){
-//         var exponent = result.toExponential().match(/e.*/);
-//         $(".volumeunits").val(exponent[0].substring(1));
-//         var result = calc;
-//         $(".volume").val(result);
-//       } else {
-//         $(".volumeunits").val("0");
-//         $(".volume").val(result);
-//       }
-//       break;
-//     case variables[0] !=="" && variables[1] !=="" && variables[3] !=="" && units[0] !=="" && units[1] !=="":
-//       var unit = units[1] / units[0];
-//       var calc = variables[1] / (variables[0] * variables[3]);
-//       //check for unit change on answer
-//       var result = unit*calc;
-//       if ( result > 10 || result < 0.1){
-//         var exponent = result.toExponential().match(/e.*/);
-//         $(".concentrationunits").val(exponent[0].substring(1));
-//         var result = calc;
-//         $(".concentration").val(result);
-//       } else {
-//         $(".concentrationunits").val("0");
-//         $(".concentration").val(result);
-//       }
-//       break;
-//     default:
-//       alert("Please be sure you have a MW and 2/3 mass, volume, concentration values and units entered and try again.");
-//   }
-// });
