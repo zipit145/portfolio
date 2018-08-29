@@ -4,6 +4,9 @@ body {
 img {
   width: 100%;
 }
+header {
+  padding-bottom: 30px;
+}
 footer {
   text-align: right;
 }
