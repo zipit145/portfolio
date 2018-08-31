@@ -1,4 +1,7 @@
-body {
+body{
+  margin: 0 auto;
+}
+main {
   width: 75%;
 }
 img {
@@ -18,6 +21,9 @@ footer {
 }
 .jsEx {
   border-color: blue;
+}
+.g4button{
+  padding-bottom: 5px;
 }
 .webform {
   background-color: #fefefe;
