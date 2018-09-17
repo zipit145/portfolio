@@ -21,7 +21,8 @@
                         I studied biochemistry and a minor in entrepreneurship.
                         I started working in cell culture cancer research lab. Once I graduated,
                         I moved to Colorado to work for Bio-Techne, a biological research reagent company.                         For the first year there I worked with their supply network. This involved yearly
-                        margin negotations and data integrity management of the supplier's product line.</p>
+                        margin negotations and data integrity management of the supplier's product line.
+                    </p>
                     <p class="summary col-md-12">
                         Then I joined the web development team as a junior developer where I worked for the last 3 years.
                         My coding background is self taught and was tailored to specific projects the company needed addressed.
@@ -31,7 +32,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h3 class="calcTitle">I am recreating some of the javascript calculators that I worked on during my old job. Please click below for some examples.</h3>
+                <h3 class="calcTitle">I am recreating some of the JavaScript calculators that I worked on during my old job. Please click below for some examples.</h3>
                 <!-- Button trigger modal -->
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 g4button">
@@ -59,18 +60,18 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                            C1 x V1 = C2 x V2<br>
-                            <div class="calculator">
-                            <input class="c1" type="number">
-                            <input class="v1" type="number">
-                            =
-                            <input class="c2" type="number">
-                            <input class="v2" type="number"><br/>
+                            <label> x V1 = C2 x V2</label><br>
+                                <div class="calculator">
+                                <input class="c1" type="number">
+                                <input class="v1" type="number">
+                                <label>=</label>
+                                <input class="c2" type="number">
+                                <input class="v2" type="number"><br/>
                             </div>
                             <span class="calculate">Calculate!</span><br/>
                             <p class="answer">The answer is:</p>
                             <p>The gif below is a representation of how I feel about learning more:</p><br/>
-                            <img src="https://media1.giphy.com/media/3CRHmg3VCYdb2/giphy.gif"></img>
+                            <img src="https://media1.giphy.com/media/3CRHmg3VCYdb2/giphy.gif" alt="you know nothing">
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -99,10 +100,11 @@
                                 <option value="14">phosphorus</option>
                                 <option value="1">flourine</option>
                             </select>
-                            Molarity Calculator: Mass = Concentration x Volume x Molecular Weight<br>
+                            <label>Molarity Calculator: Mass = Concentration x Volume x Molecular Weight</label><br>
                             <div class="calculator">
                                 <p>
-                                M<input class="mass" type="number">
+                                <label>M</label>
+                                <input class="mass" type="number">
                                 <select class="massunits">
                                     <option disabled selected value> -- select a mass unit -- </option>
                                     <option value="-6">ug</option>
@@ -110,23 +112,26 @@
                                     <option value="0">g</option>
                                     <option value="3">kg</option>
                                 </select>
-                                = C<input class="concentration" type="number">
+                                <label>= C</label>
+                                <input class="concentration" type="number">
                                 <select class="concentrationunits">
                                     <option disabled selected value> -- select a mass unit -- </option>
                                     <option value="-6">uM</option>
                                     <option value="-3">mM</option>
                                     <option value="0">M</option>
                                     <option value="3">kM</option>
-                                    </select>
-                                x V<input class="volume" type="number">
+                                </select>
+                                <label>x V</label>
+                                <input class="volume" type="number">
                                 <select class="volumeunits">
                                     <option disabled selected value> -- select a mass unit -- </option>
                                     <option value="-6">ul</option>
                                     <option value="-3">ml</option>
                                     <option value="0">l</option>
                                     <option value="3">kl</option>
-                                    </select>
-                                x MW<input class="mw" type="number"> g/mol
+                                </select>
+                                <label>x MW</label>
+                                <input class="mw" type="number"> g/mol
                             </p><br/>
                             </div>
                             <span class="calculatemw">Calculate!</span><br/>
