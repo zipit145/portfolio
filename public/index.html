@@ -12,9 +12,14 @@
     <header>
         <div id="nav-placeholder"></div>
     </header>
-    <main class="container">
+    <main>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6">
+                <p>
+                    Greg Forney likes snowboarding, rock climbing, cooking, and classic video games.
+                </p>
+            </div>
+            <div class="col-lg-6">
                 <h2>Professional Summary</h2>
                 <div class="row">
                     <p class="summary col-md-12">I would like to work in digital strategy for a biotechnology company. In college,
@@ -29,118 +34,6 @@
                         My duties centered around managing our internal stakeholder relationships, bug hunting (especially on technical parts of the site like datasheets and calculators),
                         and assisting in the management of a new ticketing system.
                     </p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h3 class="calcTitle">I am recreating some of the JavaScript calculators that I worked on during my old job. Please click below for some examples.</h3>
-                <!-- Button trigger modal -->
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 g4button">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dilutionModal">
-                            Launch Dilution Calculator
-                        </button>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 g4button">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#molarityModal">
-                            Launch molarity Calculator
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-          <!-- Modal -->
-        <div class="modal fade" id="dilutionModal" tabindex="-1" role="dialog" aria-labelledby="dilutionModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="dilutionModalLabel">C1V1=C2V2</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <label> x V1 = C2 x V2</label><br>
-                                <div class="calculator">
-                                <input class="c1" type="number">
-                                <input class="v1" type="number">
-                                <label>=</label>
-                                <input class="c2" type="number">
-                                <input class="v2" type="number"><br/>
-                            </div>
-                            <span class="calculate">Calculate!</span><br/>
-                            <p class="answer">The answer is:</p>
-                            <p>The gif below is a representation of how I feel about learning more:</p><br/>
-                            <img src="https://media1.giphy.com/media/3CRHmg3VCYdb2/giphy.gif" alt="you know nothing">
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-          <!-- Modal -->
-        <div class="modal fade" id="molarityModal" tabindex="-1" role="dialog" aria-labelledby="molarityModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="molarityModalLabel">C1V1=C2V2</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <select class="elements">
-                                <option disabled selected value> -- select an element -- </option>
-                                <option value="100">iron</option>
-                                <option value="11">zinc</option>
-                                <option value="14">phosphorus</option>
-                                <option value="1">flourine</option>
-                            </select>
-                            <label>Molarity Calculator: Mass = Concentration x Volume x Molecular Weight</label><br>
-                            <div class="calculator">
-                                <p>
-                                <label>M</label>
-                                <input class="mass" type="number">
-                                <select class="massunits">
-                                    <option disabled selected value> -- select a mass unit -- </option>
-                                    <option value="-6">ug</option>
-                                    <option value="-3">mg</option>
-                                    <option value="0">g</option>
-                                    <option value="3">kg</option>
-                                </select>
-                                <label>= C</label>
-                                <input class="concentration" type="number">
-                                <select class="concentrationunits">
-                                    <option disabled selected value> -- select a mass unit -- </option>
-                                    <option value="-6">uM</option>
-                                    <option value="-3">mM</option>
-                                    <option value="0">M</option>
-                                    <option value="3">kM</option>
-                                </select>
-                                <label>x V</label>
-                                <input class="volume" type="number">
-                                <select class="volumeunits">
-                                    <option disabled selected value> -- select a mass unit -- </option>
-                                    <option value="-6">ul</option>
-                                    <option value="-3">ml</option>
-                                    <option value="0">l</option>
-                                    <option value="3">kl</option>
-                                </select>
-                                <label>x MW</label>
-                                <input class="mw" type="number"> g/mol
-                            </p><br/>
-                            </div>
-                            <span class="calculatemw">Calculate!</span><br/>
-                            </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
                 </div>
             </div>
         </div>

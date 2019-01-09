@@ -63,6 +63,7 @@ $( ".calculatemw" ).click(function() {
     $(".concentration").val(),
     $(".mw").val(),
   ]
+
   //units converted to 10^unit value.
   var units = [
     Math.pow(10,$(".volumeunits").val()),
@@ -70,6 +71,7 @@ $( ".calculatemw" ).click(function() {
     Math.pow(10,$(".concentrationunits").val()),
     1,
   ] 
+  console.log(units)
   //which box is empty
   switch (!!variables) {
     case variables[0] !=="" && variables[2] !=="" && variables[3] !=="":

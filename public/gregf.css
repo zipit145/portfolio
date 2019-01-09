@@ -36,17 +36,61 @@ footer {
 .inactive {
   display: none; /* Hidden by default */;
 }
-.calculate{
-  outline: 3px solid black;
-  outline-offset: 3px;
-}
+
 .calculator{
   margin-bottom: 10px;
 }
 .calcTitle{
   font-weight: bold;
 }
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .calcRow {
+      max-width: 100px;
+    }
+    select {
+      width: 250px;
+      text-align: center;
+    }
+    input {
+      width: 250px;
+      text-align: center;
+    }
+    label {
+      width: 250px;
+    }
+    form {
+      padding-left: 10px;
+    }
+  }
 
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+    }
+    select {
+      width: 225px;
+      text-align: center;
+    }
+    input {
+      width: 225px;
+      text-align: center;
+    }
+    label {
+      width: 225px;
+    }
+    form {
+      padding-left: 10px;
+    }
+.calcRow{
+  text-align: center;
+}
 .modal2 {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
