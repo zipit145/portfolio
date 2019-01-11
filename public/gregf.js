@@ -1,5 +1,26 @@
 var span = document.getElementsByClassName("close")[0];
+var bubbles = document.querySelectorAll(".bubble");
+var bubble = document.getElementById("bubble1")
+var projects =  document.querySelectorAll(".project")
+//console.log(bubbles)
+for(i=0; i<bubbles.length; i++) {
+  bubbles[i].addEventListener("mouseover", event=> {
+    console.log("here",event.currentTarget)
+    document.getElementById(event.currentTarget.id).classList.add("activeBubble")
+    document.getElementById(event.currentTarget.id).classList.remove("bubble")
+    document.getElementById("project"+event.currentTarget.id).classList.remove("projectInactive")
+    //projects[i].classList.remove("projectInactive")
+  });
+  bubbles[i].addEventListener("mouseout", event=> {
+    console.log("here",event.currentTarget.id)
+    document.getElementById(event.currentTarget.id).classList.remove("activeBubble")
+    document.getElementById(event.currentTarget.id).classList.add("bubble")
+    document.getElementById("project"+event.currentTarget.id).classList.add("projectInactive")
+    //projects[i].classList.add("projectInactive")
+  });
+}
 
+  
 //navigation
 $(function(){
   $("#nav-placeholder").load("navg4.html");
