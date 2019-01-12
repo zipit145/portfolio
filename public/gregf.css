@@ -117,20 +117,18 @@ footer {
 h2 {
   text-align: center;
 }
-.projects {
-  display: flex;
-  justify-content: center;
-}
+
 .bubble{
   height: 25px;
   width: 25px;
   background-color: blue;
   border-radius: 50%;
   display: inline-block;
+  position: absolute;
 }
 .activeBubble {
-  height: 400px;
-  width: 350px;
+  height: 40vw;
+  width: 40vw;
   background-color: rgb(213, 165, 43);
   text-align: center;
   -webkit-transition: height 1s ease-in, width 1s ease-in, background-color 1s ease-in;
@@ -139,7 +137,22 @@ h2 {
   -ms-transition: height 1s ease-in, width 1s ease-in, background-color 1s ease-in;
   transition: height 1s ease-in, width 1s ease-in, background-color 1s ease-in;
   border-radius: 25%;
-
+}
+.bubble1 {
+  top: 18vh;
+  left: 80vw;
+}
+.bubble2 {
+  top: 24vh;
+  left: 80vw;
+}
+.bubble3 {
+  top: 30vh;
+  left: 80vw;
+}
+.bubble4 {
+  top: 36vh;
+  left: 80vw;
 }
 
 .project1 {
@@ -160,13 +173,13 @@ h2 {
   -webkit-animation: fadeIn 4s;
   animation: fadeIn 4s; 
 }
-
+.projects {
+  width: 80vw;
+  height: 80vw;
+}
 
 .projectInactive {
   display: none;
 }
-.projects {
-  display: flex;
-  justify-content: space-between;
-}
+
 
