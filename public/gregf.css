@@ -1,6 +1,20 @@
 body{
   margin: 0 auto;
-  background: #e6ffff;
+  background: #DCEDFF;
+}
+nav{
+  background: #0D1B2A;
+}
+.navLink{
+  color: #FFE74C;
+  padding-right: 5px;
+}
+.projectLink{
+  color: #B80C09;
+}
+.btnG{
+  background: #B80C09;
+  border-color: #000000;
 }
 main {
   width: 75%;
@@ -170,8 +184,6 @@ h2 {
 }
 .project {
   padding-top: 30px;
-  -webkit-animation: fadeIn 4s;
-  animation: fadeIn 4s; 
 }
 .projects {
   width: 80vw;
