@@ -1,19 +1,19 @@
 body{
   margin: 0 auto;
-  background: #DCEDFF;
+  background: rgb(229, 240, 252);
 }
 nav{
-  background: #0D1B2A;
+  background: #006E90;
 }
 .navLink{
-  color: #FFE74C;
+  color: #FFFFFF;
   padding-right: 5px;
 }
 .projectLink{
-  color: #B80C09;
+  color: #F18F01;
 }
 .btnG{
-  background: #B80C09;
+  background: #F18F01;
   border-color: #000000;
 }
 main {
@@ -75,7 +75,7 @@ footer {
     form {
       padding-left: 10px;
     }
-  }
+}
 
   input {
     -webkit-appearance: none;
@@ -183,11 +183,19 @@ h2 {
     to { opacity: 1; }
 }
 .project {
-  padding-top: 30px;
+
+  border-bottom: 2px solid #006E90;
+  position:relative;
+}
+p{
+  height: auto;
 }
 .projects {
-  width: 80vw;
-  height: 80vw;
+  margin-left: 10vw;
+}
+.dividerG{
+  border-right: 2px solid #006E90;
+  border-bottom: 2px solid #006E90;
 }
 
 .projectInactive {
