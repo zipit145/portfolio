@@ -5,9 +5,10 @@ body{
 nav{
   background: #006E90;
 }
+
 .navLink{
   color: #FFFFFF;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 .navbar-toggler{
   background-color: black;
@@ -198,10 +199,21 @@ h2 {
     to { opacity: 1; }
 }
 .project {
+  padding-top: 1vw;
   border-bottom: 2px solid #006E90;
   position:relative;
   width: 60vw;
   max-width: 60vw;
+}
+
+.project3{
+  border-right: 2px solid #006E90;
+}
+
+@media only screen and (max-width: 987px) {
+  .project {
+    border-right: 2px solid #006E90;
+  }
 }
 
 p{
